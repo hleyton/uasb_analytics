@@ -1,39 +1,79 @@
-El conjunto de datos que se analizarán estan relacionados al consumo de alchol en estudiantes de secundaria de dos escuelas la Gabriel Pereira 'GP' y la Mousinho da Silveira 'MS'.
+ESQUEMA DE REGISTRO RENDIMIENTO ESCOLAR 2009
+“Estudiantes.xls”
 
-Descripción de las columnas del archivo student-mat.csv:
-1.- La escuela del estudiante -  registra solo estos dos nombres de colegios ( binario: 'GP' - Gabriel Pereira o "MS" - Mousinho da Silveira).
-2.- El sexo del estudiante (binario: "F" - femenino o 'M' – masculino)
-3.- La edad del estudiante (numérico: del 15 a 22 años)
-4.- Área en la que vive el estudiante (binario: 'U' - urbano o 'R' – rural)
-5.- Número de hermanos en la familia (binario: 'LE3' - menor o igual a 3 o 'GT3' - mayor que 3)
-6.- Situación de convivencia con los padres (binario: "T" - que vive con ellos o 'A' – aparte)
-7.- Educación de la madre (numérico: 0 - ninguno, 1 - educación primaria (4º grado), 2 de 5 al 9 grado, 3 educación secundaria o 4 educación superior).
-8.- Educación del padre (numérico: 0 - ninguno, 1 - educación primaria (4º grado), 2 de 5 al 9 grado, 3 educación secundaria o 4 educación superior).
-9.- El trabajo de la madre (nominal: "maestro", relacionados con Salud, "servicios" civiles (por ejemplo, administrativo o policial), 'en_casa "o" otro ").
-10.- El trabajo del padre (nominal: "maestro", la atención "salud" relacionados, "servicios" civiles (por ejemplo, administrativo o policial), 'en_casa "o" otro ").
-11.- Razón para elegir esta escuela (nominal: cerca de "casa", "reputación" de la escuela, la preferencia "curso" o "otro").
-12.- Con quien vive el estudiante (nominal: "madre", "padre" o "otro").
-13.- Tiempo de viaje de la escuela al hogar (numérico: 1 - <... 15 min 2 - 15 a 30 min, 3 - 30 minutos a 1 hora, o 4 -> 1 hora).
-14.- Tiempo de estudio semanal (numérico: 1 - <2 horas, 2 - 2 a 5 horas, 3-5 a 10 horas, o 4 -> 10 horas).
-15.- Número de fracasos del pasado (clase numérica: n si 1 <= n <3, 4 persona)
-16.- Cuenta con ayuda educativa adicional (binaria: sí o no).
-17.- Recibe apoyo educativo familiar (binaria: sí o no).
-18.- Recibe clases particulares en las materias matemáticas o portugués (binaria: sí o no).
-19.- Realiza actividades extra-curriculares (binaria: sí o no)
-20.- Asistido a la guardería (binaria: sí o no).
-21.- Quiere tomar la educación superior (binaria: sí o no).
-22.- Acceso a Internet en casa (binaria: sí o no).
-23.- Tiene una relación romántica (binaria: sí o no).
-24.-  Calidad de las relaciones familiares (numéricos: a partir del 1 - muy malo a 5 – excelente).
-25.- Tiempo libre después de la escuela (numérico: a partir de 1 - muy baja a 5 - muy alto).
-26.- Sale con amigos (numérico: a partir de 1 - muy baja a 5 - muy alto).
-27.- Consumo de alcohol los días laborales(numérico: a partir de 1 - muy baja a 5 - muy alto).
-28.- Consumo de alchol los fines de semana (numérico: a partir de 1 - muy baja a 5 - muy alto).
-29.- Estado de salud actual (numérico: a partir de 1 - muy malo, 5 - muy bien).
-30.- Número de ausencias escolares (numérico: de 0 a 93) 
+Esta base de datoscontiene la cantidad de alumnos aprobados, reprobados y retirados, por colegio, 
+nivel de enseñanza, grado y sexo
 
-# Estos grados están relacionados con el sujeto supuesto, Matemáticas o portugués: 
-31 G1 - primer grado periodo (numérico: de 0 a 20) 
-31 G2 - segundo grado periodo (numérico: de 0 a 20) 
-32 G3 - calificación final (numérico: de 0 a 20, el objetivo de producción) 
+CAMPO	TIPO		LARGO	DESCRIPCIÓN
+ANO		Numérico	4		Año 2009
+RBD		Numérico	6	 	Número Rol Base de Datos del establecimiento
+RBD_DGV		Carácter	1		Dígito Rol Base de Datos
+COD_ENSE	Numérico	3		Tipo de Enseñanza (ver tabla)
+REG_COD		Numérico	2		Región
+PRO_COD		Numérico	1		Provincia
+COM_COD		Numérico	2		Comuna
+COM_NOM		Carácter	20		Nombre Comuna
+COD_DEPE	Numérico	1		Dependencia
+								1 : Corporación Municipal
+								2 : Municipal (DAEM)
+								3 : Particular Subvencionado
+								4 : Particular  Pagado
+								5 : Corporación de Administración Delegada
+COD_AREA	Numérico    	1		Area geográfica
+						1 : Urbana
+						2 : Rural
+RTTO		Numérico	3		Cantidad de retirados
+APRTO		Numérico	3		Cantidad de aprobados
+REPTO		Numérico	3		Cantidad de reprobados
+
+TIPOS DE ENSEÑANZA
+
+110 
+Enseñanza Básica
+160
+Educación  Básica  Común Adultos (Decreto Nº 77/1982)
+163
+Escuelas  Cárceles (Básica Adultos)
+310
+Enseñanza  Media H-C niños y jóvenes
+360
+Educación  Media H-C adultos vespertino y nocturno (Decreto Nº 190/1975)
+363
+Educación Media H-C adultos (Decreto Nº 257/2009)
+410
+Enseñanza  Media Técnico –Profesional Comercial Niños
+460
+Educación  Media T-P Comercial Adultos (Decreto Nº  152/1989)
+461
+Educación  Media T-P Comercial Adultos (Decreto Nº  152/1989)
+463
+Educación Media T-P Comercial Adultos (Decreto Nº 257/2009)
+510
+Enseñanza Media T-P Industrial Niños
+560
+Educación  Media T-P Industrial Adultos (Decreto Nº  152/1989)
+561
+Educación  Media T-P Industrial Adultos (Decreto Nº  152/1989)
+563
+Educación Media T-P Industrial Adultos (Decreto Nº 257/2009)
+610
+Enseñanza Media T-P Técnica Niños
+660
+Educación  Media T-P Técnica Adultos (Decreto Nº  152/1989)
+661
+Educación  Media T-P Técnica Adultos (Decreto Nº  152/1989)
+663
+Educación Media T-P Técnica Adultos (Decreto Nº 257/2009)
+710
+Enseñanza Media T-P Agrícola Niños
+760
+Educación  Media T-P Agrícola Adultos (Decreto Nº  152/1989)
+761
+Educación  Media T-P Agrícola Adultos (Decreto Nº  152/1989)
+763
+Educación Media T-P Agrícola Adultos (Decreto Nº 257/2009)
+810
+Enseñanza Media T-P Marítima Niños
+860
+Educación  Media T-P Marítima Adultos
 
